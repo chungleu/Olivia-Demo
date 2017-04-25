@@ -1,0 +1,536 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ---------- GENERAL ---------- */
+
+body {
+	background: #e9e9e9;
+	color: 	#808080;
+	font: 100%/1.5em "Droid Sans", sans-serif;
+	margin: 0;
+}
+
+a { text-decoration: none; }
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+h3 {
+	color: #000000;
+	padding: 0 0 0 25px;
+    margin: 15px 0 0 0;
+}
+
+h4, h5 {
+	line-height: 1.5em;
+	margin: 0;
+}
+
+hr {
+	background: #e9e9e9;
+    border: 0;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 1px;
+    margin: 0;
+    min-height: 1px;
+    width: 50px;
+    margin: 5px 100px;
+}
+
+img {
+    border: 0;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+input {
+	border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    margin: 0;
+}
+
+p {
+	margin: 0;
+	line-height: 18px;
+}
+
+tr {
+    font-size: 12px;
+}
+
+.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after { clear: both; }
+
+/* ---------- LIVE-CHAT ---------- */
+
+#live-chat {
+	bottom: 0;
+	font-size: 12px;
+	right: 40px;
+	position: fixed;
+	width: 300px;
+}
+
+#live-chat header {
+	background: rgba(41,50,57,0.9);
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	padding: 12px 24px;
+}
+
+.chat-header{
+	cursor: pointer;
+	float: right;
+    width: 250px;
+}
+
+#live-chat h4:before {
+	background: #1a8a34;
+	border-radius: 50%;
+	content: "";
+	display: inline-block;
+	height: 8px;
+	margin: 0 8px 0 0;
+	width: 8px;
+}
+
+#live-chat h4 {
+	font-size: 12px;
+}
+
+#live-chat h5 {
+	font-size: 10px;
+    margin-bottom: 5px;
+}
+
+#live-chat form {
+	padding: 15px;
+	margin-bottom: 0;
+}
+
+#live-chat input[type="text"] {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 8px;
+    margin: 0 5px 5px 8px;
+	outline: none;
+    width: 245px;
+}
+
+
+#live-chat input[type="text"]:focus{
+    border: 1px solid #808080;
+}
+
+.inputOutline{
+	margin-bottom: 0;	
+}
+
+.chat-message-counter {
+	background: #e62727;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    width: 25px;
+    right: 0;
+    top: 0;
+    line-height: 26px;
+    position: absolute;
+    text-align: center;
+    margin: -13px -13px 0 0;
+}
+
+.toggle-sticky {
+	display: block;
+	float: right;
+	height: 16px;
+	width: 16px;
+}
+
+.admin-panel-Btn {
+	display: block;
+	float:  left;	
+    height: 12px;
+    width: 12px;
+    margin: 10px 3px 0 15px;
+    cursor: pointer;
+}
+
+.chat {
+	background: #fff;
+	border-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	overflow: hidden;
+}
+
+.chat-history {
+	height: 320px;
+	padding: 8px 24px;
+	overflow-y: auto;
+    margin-right: 4px;
+}
+
+.segments{
+	margin: 8px 0;	
+}
+
+.segments img{
+	border-radius: 50%;
+	float: left;	
+}
+
+.from-watson{
+	margin-left: 56px;
+    padding: 5px 0;	
+}
+
+.from-watson.latest .message-inner {
+  color: #000000;
+}
+
+.from-user{
+	margin-left: 0px;
+	text-align: right;
+    padding: 5px 0;	
+}
+
+.chat-time {
+	float: right;
+	font-size: 10px;
+	margin-top: -5px;
+}
+
+.from-user .chat-time{
+	float: left;
+}
+
+.chat-feedback {
+	font-style: italic;	
+	margin: 0 0 0 80px;
+}
+
+.watson-logo{
+	background-image: url(../img/watsonLogo.png);
+	background-repeat: no-repeat;
+    background-size: 100%;
+	border-radius: 50%;
+	float: left;
+	width: 42px;
+	height: 42px;
+}
+
+.chat ::-webkit-scrollbar{
+	width: 7px;
+}
+
+.chat ::-webkit-scrollbar-thumb{
+    background-color: rgba(225,225,225,0.9);
+    border-radius: 10px;
+}
+
+.chat ::-webkit-scrollbar-track{
+border-radius: 10px;
+    margin: 5px;
+}
+
+#elmChoice{
+	cursor: pointer;
+}
+
+#elmChoice:hover{
+	color: #3498db;
+	border: 1px solid #3498db;	
+    transition: all 0.3s;
+}
+
+.entity-choice {
+    line-height: 30px;
+    margin: 8px 0 0 12px;
+    padding: 0 15px;
+    position: relative;
+    opacity: .999;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #808080;
+    list-style-type: none;
+    text-align: center;
+    width: 60%;    
+    transition: all 0.3s;
+}
+
+.intent-choice {
+    border-radius: 30px;
+    border: 1px solid #808080;
+    text-align: center;
+    padding: 2px 15px;
+    margin-top: 5px;
+}
+
+.loading-wrapper {
+	display: block;
+    width: 40px;
+    position: absolute;
+    margin-left: 35px;
+    bottom: 40px;
+}
+
+.hide{
+	display: none;
+}
+
+.ans-Frame{
+	border: 0;
+	width: 100%;
+	height: 100%
+}
+
+.admin-panel{
+	float: left;
+	display: none;
+	width: 395px;
+	color: #000000;
+}
+
+.edit-box{
+	padding: 0 10px 8px 15px;
+	display: none;
+}
+
+.user-panel{
+	float: right;
+    width: 302px;
+    height: 353px;
+    top: 0;
+    margin-bottom: 20px;
+}
+
+.nav-bar{
+	display: none;
+    float: left;
+}
+
+.nav-bar ul{
+	list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: -3px 0 -10px 0;
+}
+
+.nav-bar li{
+	display: inline-block;
+    margin-right: 30px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: -5px;
+    cursor: pointer;
+}
+
+.nav-bar li:hover{
+	border-bottom: 5px solid #fff;
+}
+
+.active{
+	border-bottom: 5px solid #fff;	
+}
+
+.admin-panel-bg{
+	width: 150px;
+    margin: 100px 0 0 140px;
+    opacity: 0.8;
+}
+
+.edit-intents {
+    margin: 0px 0 20px 0;
+}
+
+.intent-value {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    width: 340px;
+}
+
+.edit-confidence{
+	float: right;
+}
+
+#progressBarInputFile {
+    margin: 10px 20px;
+}
+
+.progress-bar{
+	background-color: rgba(0, 0, 0, 0.05);
+    height: 7px;
+    margin: 6px 0 0 40px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progress-bar div{
+	background-color: #00aca5;
+}
+
+.choice {
+	background-image: url("../img/buttons/pass.png");
+}
+
+.pass {
+	background-image: url("../img/buttons/passGreen.png");
+}
+
+.cross{
+	background-image: url("../img/buttons/cross.png");	
+}
+
+#selectIntent {
+    margin-left: 10px;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.edit-entities{
+	text-align: center;
+    width: 380px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.detectedEnts{
+	margin: 5px;
+    padding: 5px 30px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #808080;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.text-input {
+	position: absolute;
+    bottom: 0;
+}
+
+.know-more{
+	cursor: pointer;
+	text-decoration: underline;
+	color: #4169E1;
+}
+
+/*File upload formating*/
+.content-upload {
+	margin: 10px 10px 0 10px;
+}
+
+.upload-container {
+	padding: 0 10px;
+	text-align: center;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+	color :  #5a5a5a;
+	cursor : pointer;
+    border: 1.5px dashed #c7c7c7;
+}
+
+.upload-container:hover {
+    border: 1.5px dashed #696969;	    
+    color: #000000;
+}
+
+.upload-description {
+  margin: 13px 0;
+  font-size: 12px;
+}
+
+.upload-file-chooser-btn {
+    color: #5a5a5a;
+    border: .15em solid #c7c7c7;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.upload-file-chooser-btn:hover {
+    border: .15em solid #000000;
+    color: #000000;
+}
+
+input[type=file] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.upload-file-chooser-input {
+    display: none;
+}
+
+.launch-test {
+	display: none;
+}
+
+.launch-test-bg{
+	margin: 40px 0 0 125px;
+}
+
+#launchTestBtn:hover {	
+	color: #000;
+    border: 1px solid #000;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.launch-test-btn {
+	cursor: pointer;
+    line-height: 30px;
+    margin: 10px 0 20px 90px;
+    position: relative;
+    opacity: .999;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #808080;
+    list-style-type: none;
+    text-align: center;
+    width: 60%;    
+    transition: all 0.3s;	
+}
+
+.triggers-val {
+	margin-top: 5px;
+	text-align: center;
+}
+
+.triggers-val table{
+	margin: 10px 0 0 15px;
+}
+
+#triggersTr input[type="text"]{
+	width: 50px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 20px;
+}

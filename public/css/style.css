@@ -1,0 +1,32 @@
+body.page-signin {
+    background: #666 url(../img/background/bg1.jpg) no-repeat fixed;
+    background-size: cover;
+}
+.bg-white-transparent {
+    background: rgba(255, 255, 255, 0.95);
+}
+.overlay {
+	background: rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.rounded-1x{
+	border-radius: 7px;
+}
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+    height: 80px;
+}
+.wrongCreds {
+    display: none;
+}
+.wrongCredsShow {
+    display: block;
+    color: rgb(183, 26, 26);
+    font-size: 12px;
+    text-align: center;
+}

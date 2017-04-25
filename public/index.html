@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Olivia - ChatBot 2.1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/barchart.css">
+	
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/animation.js"></script>		
+  	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/bar-chart.js"></script>
+
+</head>
+<body>
+
+	<div>
+		<iframe id="ansFrame" class="ans-Frame" src=""></iframe>
+	</div>
+
+	<div id="live-chat">			
+		<header class="clearfix">	
+			<div class="nav-bar" id="navBar">
+		      <ul>
+		        <li class="active" id="intents">Intents Test</li>
+		        <li id="tests">Automated Test</li>
+		      </ul>				
+			</div>	
+			
+			<div class="chat-header" id="chatHeader">
+				<img class="toggle-sticky" id="sliderImg" src="img/buttons/slideUp.png">
+				<h4>Olivia Cognitive Bot</h4>
+			</div>
+			
+			<span id="chat-close" class="chat-message-counter">X</span>
+		</header>
+
+		<div class="chat">	
+			<div class="admin-panel" id="adminPanel">
+				<img class="admin-panel-bg" src="img/logo/animated/watsonBlack.gif">		          
+				
+				<div class="edit-box" id="editBoxintents">
+					<h3>Detected Intents & Confidence</h3>										
+					<div class="edit-intents">
+						<span class="intent-value" id="intent0"></span>	<span id="confidence0" class="edit-confidence"></span>
+						<div class="select choice" id="selectIntent"></div>
+						<div class="progress-bar" id="progressBar0"><div></div></div>
+					</div>
+					
+					<div class="edit-intents">
+						<span class="intent-value" id="intent1"></span>	<span id="confidence1" class="edit-confidence"></span>
+						<div class="select choice" id="selectIntent"></div>
+						<div class="progress-bar" id="progressBar1"><div></div></div>
+					</div>
+					
+					<div class="edit-intents">
+						<span class="intent-value" id="intent2"></span>	<span id="confidence2" class="edit-confidence"></span>
+						<div class="select choice" id="selectIntent"></div>
+						<div class="progress-bar" id="progressBar2"><div></div></div>
+					</div>					
+					
+					<h3>Detected Entities & Values</h3>
+					<div class="edit-entities" id="editEntities">
+					</div>
+				</div>				
+				
+				<div class="edit-box" id="editBoxtests">	
+					<div id="testParamsPanel">			
+						<h3>Set Confidence Levels</h3>					
+						<div class="triggers-val" id="triggersVal">
+							<p>Please set the confidence levels to match Conversation's dialog triggers:</p>
+							<table>
+							  <tr id="triggersTr">
+							    <th>High</th>
+							    <td><input id="triggerHigh" class="triggers-input" value="0.00" type="text"></td>
+							    <th>Medium</th>
+							    <td><input id="triggerMedium" class="triggers-input" value="0.00" type="text"></td>
+							    <th>Low</th>
+							    <td><input id="triggerLow" class="triggers-input" value="0.00" type="text"></td>
+							  </tr>
+							</table>							
+						</div>
+															
+						<h3>Upload Test File</h3>		
+						<div class="content-upload" id="contentUpload">
+							<div class="upload-container dropzone">
+								<p class="upload-description">Select or drag a CSV ﬁle with the appropiate formatting : User_input;Expected_intent</p>
+								<div class="upload--file-chooser base--label">
+									<label for="fileChooserInput" class="upload-file-chooser-btn base--button">Choose Your Test File</label>
+									<input id="fileChooserInput" class="upload-file-chooser-input base-file-input" type="file", accept=".csv" title="Choose a file to upload" name="document">
+								</div>							
+								<span id="inputFileName"></span>	
+								<span id="inputFilePercentage"></span>
+								<p class="upload-description">Important: Save the CSV file using UTF-8 encoding.</p>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="launch-test" id="launchTest">			
+						<h3>Test File Analysis</h3>
+						<img class="launch-test-bg" id="launchTestBg" src="img/logo/WatsonSimple.png">
+						<div class="launch-test-btn" id="launchTestBtn">Start Automated Test</div>						
+						<div id="resultChart"></div>
+					</div>
+				</div>				
+			</div>
+				
+			<div id="userPanel" class="user-panel">
+				<div id="scrollingChat" class="chat-history">
+				</div>
+				       
+				<div class="loading-wrapper hide" id="loader">
+					<img src="img/loader/loaderOld.gif">
+				</div>				
+			</div>
+			
+			<div class="text-input">
+		        <label for="textInput" class="inputOutline">
+				  <img class="admin-panel-Btn" id="adminPanelBtn" src="img/buttons/slideLeft.png">
+		          <input id="textInput" class="input responsive-column" placeholder="Entrez votre message ici..." type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)">
+		        </label>
+	        </div>
+			
+		</div> <!-- end chat -->
+	</div>
+	
+	<script type="text/javascript" src="js/panels.js"></script>
+	<script type="text/javascript" src="js/upload.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/conversation.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+	
+</body>
+</html>
